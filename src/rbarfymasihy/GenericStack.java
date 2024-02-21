@@ -13,7 +13,7 @@ public class GenericStack<T> {
      * @param size  list size
      */
     public GenericStack(int size) {
-        this.array = (T[]) new String[size];
+        this.array = (T[]) new Object[size];
         top = -1;
     }
 
@@ -21,9 +21,9 @@ public class GenericStack<T> {
      * push method, which adds an element to the top of the array.
      * @param element   String to be added
      */
-    public void push(T element) {
+    public void push(T element) throws StackFullException {
         if (top == array.length - 1) {
-            System.out.println("Stack is full! Cannot push element.");
+            throw new StackFullException();
         } else {
             top++;
             array[top] = element;
@@ -35,10 +35,9 @@ public class GenericStack<T> {
      * Method pop, which returns the top element of the array and deletes it after.
      * @return  top element of array
      */
-    public T pop() {
+    public T pop() throws StackEmptyException {
         if (top == -1) {
-            System.out.println("Stack is empty! Cannot pop element.");
-            return (T) "empty";
+            throw new StackEmptyException();
         } else {
             T poppedElement = array[top];
             top--;
@@ -51,10 +50,9 @@ public class GenericStack<T> {
      * Method peek, which returns the top element of the array without removing it from the list.
      * @return  top element of array
      */
-    public T peek() {
+    public T peek() throws StackEmptyException {
         if (top == -1) {
-            System.out.println("Stack is empty! No element to peek.");
-            return (T) "empty";
+            throw new StackEmptyException();
         } else {
             System.out.println("Element peeked: " + array[top]);
             return array[top];
