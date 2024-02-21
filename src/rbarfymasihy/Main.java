@@ -7,10 +7,10 @@ import java.util.Stack;
  */
 public class Main {
     public static void main(String[] args) throws StackFullException, StackEmptyException {
-        GenericStack emptyStack = new GenericStack<String>(5);  //A new generic stack String-array with a size of 5, which is meant to be empty.
-        GenericStack fullStack = new GenericStack<String>(5);   //A new generic stack String-array with a size of 5, which is meant to be full.
-        GenericStack stack = new GenericStack<String>(5);   //A new generic stack String-array with a size of 5.
-        GenericStack numbers = new GenericStack<Integer>(5);    //A new generic stack Integer-array with a size of 5.
+        GenericStack<String> emptyStack = new GenericStack<>(5);  //A new generic stack String-array with a size of 5, which is meant to be empty.
+        GenericStack<String> fullStack = new GenericStack<>(5);   //A new generic stack String-array with a size of 5, which is meant to be full.
+        GenericStack<String> stack = new GenericStack<>(5);   //A new generic stack String-array with a size of 5.
+        GenericStack<Integer> numbers = new GenericStack<>(5);    //A new generic stack Integer-array with a size of 5.
 
         stack.push("AM");   //Adding elements to the stack
         stack.push("SEW");  //Adding elements to the stack
