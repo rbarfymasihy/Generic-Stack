@@ -20,6 +20,7 @@ public class GenericStack<T> {
     /**
      * push method, which adds an element to the top of the array.
      * @param element   String to be added
+     * @throws StackFullException   if the array is full
      */
     public void push(T element) throws StackFullException {
         if (top == array.length - 1) {
@@ -34,6 +35,7 @@ public class GenericStack<T> {
     /**
      * Method pop, which returns the top element of the array and deletes it after.
      * @return  top element of array
+     * @throws StackEmptyException  if the array is empty
      */
     public T pop() throws StackEmptyException {
         if (top == -1) {
@@ -49,6 +51,7 @@ public class GenericStack<T> {
     /**
      * Method peek, which returns the top element of the array without removing it from the list.
      * @return  top element of array
+     * @throws StackEmptyException  if the array is empty
      */
     public T peek() throws StackEmptyException {
         if (top == -1) {

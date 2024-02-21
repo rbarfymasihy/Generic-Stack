@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html"},{"p":"rbarfymasihy","l":"GenericStack"},{"p":"rbarfymasihy","l":"Main"},{"p":"rbarfymasihy","l":"StackEmptyException"},{"p":"rbarfymasihy","l":"StackFullException"}];updateSearchResults();
