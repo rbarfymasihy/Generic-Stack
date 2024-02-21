@@ -1,11 +1,11 @@
 package rbarfymasihy;
 
-/**
+/** This class contains the methods for a generic String stack array.
  * @author rbarfymasihy
  * @version 20.02.2024
  */
-public class GenericStack {
-    private String[] array;
+public class GenericStack<T> {
+    private T[] array;
     private int top;
 
     /**
@@ -13,7 +13,7 @@ public class GenericStack {
      * @param size  list size
      */
     public GenericStack(int size) {
-        array = new String[size];
+        this.array = (T[]) new String[size];
         top = -1;
     }
 
@@ -21,7 +21,7 @@ public class GenericStack {
      * push method, which adds an element to the top of the array.
      * @param element   String to be added
      */
-    public void push(String element) {
+    public void push(T element) {
         if (top == array.length - 1) {
             System.out.println("Stack is full! Cannot push element.");
         } else {
@@ -35,13 +35,15 @@ public class GenericStack {
      * Method pop, which returns the top element of the array and deletes it after.
      * @return  top element of array
      */
-    public String pop() {
+    public T pop() {
         if (top == -1) {
-            return "Stack is empty! Cannot pop element.";
+            System.out.println("Stack is empty! Cannot pop element.");
+            return (T) "empty";
         } else {
-            String poppedElement = array[top];
+            T poppedElement = array[top];
             top--;
-            return "Element popped: " + poppedElement;
+            System.out.println("Element popped: " + poppedElement);
+            return poppedElement;
         }
     }
 
@@ -49,11 +51,13 @@ public class GenericStack {
      * Method peek, which returns the top element of the array without removing it from the list.
      * @return  top element of array
      */
-    public String peek() {
+    public T peek() {
         if (top == -1) {
-            return "Stack is empty! Cannot pop element.";
+            System.out.println("Stack is empty! No element to peek.");
+            return (T) "empty";
         } else {
-            return "Element peeked: " + array[top];
+            System.out.println("Element peeked: " + array[top]);
+            return array[top];
         }
     }
 
@@ -67,5 +71,16 @@ public class GenericStack {
         } else {
             return false;
         }
+    }
+
+    /**
+     * Method list, which lists all the elements followed by a ";".
+     */
+    public void list() {
+        String text = "";
+        for (int i = 0; i < top + 1; i++) {
+            text += array[i] + "; ";
+        }
+        System.out.println(text);
     }
 }
