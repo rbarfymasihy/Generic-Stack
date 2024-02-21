@@ -21,6 +21,9 @@ public class Main {
 
         stack.pop();    //Popping the top element of the stack
 
+        Integer[] intArray = {1, 2, 3, 4, 5};   //An array of integers
+        System.out.println(GenericUtils.sum(intArray));
+
         fullStack.push("A");    //Adding elements to the fullStack
         fullStack.push("B");    //Adding elements to the fullStack
         fullStack.push("C");    //Adding elements to the fullStack

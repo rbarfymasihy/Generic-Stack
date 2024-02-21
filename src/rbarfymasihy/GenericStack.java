@@ -17,6 +17,10 @@ public class GenericStack<T> {
         top = -1;
     }
 
+    public T[] getArray() {
+        return array;
+    }
+
     /**
      * push method, which adds an element to the top of the array.
      * @param element   String to be added

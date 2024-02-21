@@ -11,6 +11,7 @@ public class GenericUtils {
      * Method reverse, which reverses the elements of an array.
      * @param array array to be reversed
      * @param <T>   generic type
+     * @param <T>   generic type
      */
     public static <T> void reverse(T[] array) {
         for (int i = 0; i < array.length / 2; i++) {    //Swapping the elements of the array
@@ -25,11 +26,11 @@ public class GenericUtils {
      * @param array array to be summed up
      * @param <T>   generic type
      */
-    public static <T extends Number> void sum(T[] array) {  //The generic type T must be a subclass of Number
-        int sum = 0;    //Variable to store the sum of the elements
+    public static <T extends Number> double sum(T[] array) {  //The generic type T must be a subclass of Number
+        double sum = 0.0;    //Variable to store the sum of the elements
         for (int i = 0; i < array.length; i++) {    //Iterating through the array
-            sum += (int) array[i];  //Adding the current element to the sum
+            sum += array[i].doubleValue();  //Adding the current element to the sum
         }
-        System.out.println("Sum: " + sum);  //Printing the sum
+        return sum; //Returning the sum
     }
 }
